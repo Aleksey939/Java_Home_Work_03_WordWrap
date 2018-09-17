@@ -31,19 +31,23 @@ public class Main {
             while (sc.hasNextLine()) {
                 String line = sc.nextLine();
                 int lenght=line.length();
-                if (line.length() >= 60) {
+                if (lenght >= 60) {
                   int i=0;
                   int j=60;
-                    while(lenght>j){
+                    while(lenght>=j&&i<j){
 
-                    String line2 = line.substring(i,j);
-                    textlist.add(line2);
 
-                    i=i+60;
-                    if (i>lenght-60)
-                        j=lenght;
-                    else
-                    j=i+60;
+                            String line2 = line.substring(i, j);
+
+                            textlist.add(line2);
+
+                            i = i + 60;
+                            if (i > lenght - 60)
+                                j = lenght;
+
+                            else
+                                j = i + 60;
+
                    }
                 }
                 else {
