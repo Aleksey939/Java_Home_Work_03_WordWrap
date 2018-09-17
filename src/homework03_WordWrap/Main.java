@@ -30,25 +30,29 @@ public class Main {
 
             while (sc.hasNextLine()) {
                 String line = sc.nextLine();
-
+                int lenght=line.length();
                 if (line.length() >= 60) {
                   int i=0;
                   int j=60;
-                    while(line!=null){
+                    while(lenght>j){
 
                     String line2 = line.substring(i,j);
+                    textlist.add(line2);
+
                     i=i+60;
-                    if (i>line.length()-60)
-                        j=line.length();
+                    if (i>lenght-60)
+                        j=lenght;
                     else
                     j=i+60;
-                    textlist.add(line2);}
+                   }
                 }
                 else {
                     textlist.add(line);
                 }
-                System.out.println(line);
+
             }
+            for (String s:textlist)
+                System.out.println(s);
 
         }
     }
